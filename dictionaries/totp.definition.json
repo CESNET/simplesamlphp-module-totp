@@ -23,7 +23,7 @@
 	"totp_not_configured": {
 		"en": "It seems you do not have two-factor authentication configured. This system has been configured such that it is mandatory to use two-factor authentication."
 	},
-	"invalid_token": {
+	"invalid_code": {
 		"en": "You have entered an incorrect TOTP token."
 	}
 }

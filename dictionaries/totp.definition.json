@@ -1,0 +1,29 @@
+{
+	"2fa_required": {
+		"en": "Two-Factor Authentication Required"
+	},
+	"2fa_required_description": {
+		"en": "You are required to enter your current two-factor authentication token using your configured device to continue."
+	},
+	"ask_helpdesk": {
+		"en": "If you are unsure what this means, or have your lost your two-factor authentication device, you will need to contact your IT helpdesk for assistance."
+	},
+	"authentication_error": {
+		"en": "Authentication Error"
+	},
+	"totp_code": {
+		"en": "TOTP code:"
+	},
+	"totp_setup": {
+		"en": "TOTP setup"
+	},
+	"scan_qr_code": {
+		"en": "Scan this QR code with your TOTP app (Google Authenticator, FreeOTP or any other):"
+	},
+	"totp_not_configured": {
+		"en": "It seems you do not have two-factor authentication configured. This system has been configured such that it is mandatory to use two-factor authentication."
+	},
+	"invalid_token": {
+		"en": "You have entered an incorrect TOTP token."
+	}
+}

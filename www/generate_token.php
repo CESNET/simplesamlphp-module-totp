@@ -12,4 +12,5 @@ $totp->storeSecret($userId, $secret);
 
 $t = new Template(Configuration::getInstance(), 'totp:generate.php');
 $t->data['qrcode'] = $totp->getQRCodeImageAsDataUri($userId, $secret);
+$t->data['userId'] = $userId;
 $t->show();

@@ -1,29 +1,42 @@
 {
 	"2fa_required": {
-		"en": "Two-Factor Authentication Required"
+		"en": "Two-Factor Authentication Required",
+		"cs": "Vyžadována dvoufaktorová autentizace"
 	},
 	"2fa_required_description": {
-		"en": "You are required to enter your current two-factor authentication token using your configured device to continue."
+		"en": "You are required to enter your current two-factor authentication token using your configured device to continue.",
+		"cs": "Opište kód z TOTP aplikace na svém zařízení."
 	},
 	"ask_helpdesk": {
-		"en": "If you are unsure what this means, or have your lost your two-factor authentication device, you will need to contact your IT helpdesk for assistance."
+		"en": "If you are unsure what this means, or have your lost your two-factor authentication device, you will need to contact your IT helpdesk for assistance.",
+		"cs": "Pokud nevíte, co to znamená, nebo nemáte své zařízení, kontaktujte IT helpdesk."
 	},
 	"authentication_error": {
-		"en": "Authentication Error"
+		"en": "Authentication Error",
+		"cs": "Chyba autentizace"
 	},
 	"totp_code": {
-		"en": "TOTP code:"
+		"en": "TOTP code:",
+		"cs": "Kód TOTP:"
 	},
 	"totp_setup": {
-		"en": "TOTP setup"
+		"en": "TOTP setup",
+		"cs": "Registrace TOTP"
 	},
 	"scan_qr_code": {
-		"en": "Scan this QR code with your TOTP app (Google Authenticator, FreeOTP or any other):"
+		"en": "Scan this QR code with your TOTP app (Google Authenticator, FreeOTP or any other):",
+		"cs": "Naskenujte tento QR kód svou TOTP aplikací (Google Authenticator, FreeOTP nebo jinou):"
 	},
 	"totp_not_configured": {
-		"en": "It seems you do not have two-factor authentication configured. This system has been configured such that it is mandatory to use two-factor authentication."
+		"en": "It seems you do not have two-factor authentication configured. This system has been configured such that it is mandatory to use two-factor authentication.",
+		"cs": "Vypadá to, že nemáte nastavenu dvoufaktorovu autentizaci, ale tento systém ji vyžaduje."
 	},
 	"invalid_code": {
-		"en": "You have entered an incorrect TOTP token."
+		"en": "You have entered an incorrect TOTP token.",
+		"cs": "Kód TOTP je nesprávný."
+	},
+	"user": {
+		"en": "User: !userId",
+		"cs": "Uživatel: !userId"
 	}
 }

@@ -7,6 +7,7 @@ use RobThree\Auth\Providers\Qr\BaconQrCodeProvider;
 use RobThree\Auth\TwoFactorAuth;
 use SimpleSAML\Auth\Simple;
 use SimpleSAML\Configuration;
+use SimpleSAML\Utils\Crypto;
 
 class Totp
 {
@@ -85,6 +86,7 @@ class Totp
     {
         $className = $this->getString(self::STORAGE);
         $storage = new $className();
+        $secret = Crypto::aesEncrypt($secret);
         $storage->store($userId, $secret, $label);
     }
 

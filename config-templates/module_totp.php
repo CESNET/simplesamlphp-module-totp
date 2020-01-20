@@ -19,4 +19,6 @@ $config = [
     //'algorithm' => 'sha1',
     /** Authentication context used for token generation page authentication. */
     //'authnContext' => 'https://refeds.org/profile/mfa',
+    /** Encrypting class */
+    //'cipher' => '\\SimpleSAML\\Module\\totp\\OpenSslCipher',
 ];

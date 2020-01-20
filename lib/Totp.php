@@ -44,7 +44,7 @@ class Totp
 
     public function __construct()
     {
-        $this->config = Configuration::getOptionalConfig(self::CONFIG_FILE);
+        $this->config = self::getConfig();
         $this->tfa = new TwoFactorAuth(
             $this->getString(self::ISSUER),
             $this->getString(self::DIGITS),
@@ -90,9 +90,20 @@ class Totp
         $storage->store($userId, $secret, $label);
     }
 
+    public static function decryptSecret($secret)
+    {
+        $cipher = GetCipher::getInstance(self::getConfig());
+        return $cipher->decrypt($secret);
+    }
+
     public function verifyCode($secret, $code)
     {
         return $this->tfa->verifyCode($secret, $code);
+    }
+
+    private static function getConfig()
+    {
+        return Configuration::getOptionalConfig(self::CONFIG_FILE);
     }
 
     private function getString($name)

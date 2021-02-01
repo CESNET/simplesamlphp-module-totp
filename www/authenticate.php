@@ -38,7 +38,7 @@ $t->data['formData'] = ['StateId' => $id];
 $t->data['formPost'] = Module::getModuleURL('totp/authenticate.php');
 
 if (isset($_REQUEST['code'])) {
-    if ($totp->verifyCode($state['2fa_secret'], $_REQUEST['code'])) {
+    if ($totp->verifyCode($state['2fa_secrets'], $_REQUEST['code'])) {
         ProcessingChain::resumeProcessing($state);
     } else {
         $t->data['userError'] = $t->t('{totp:totp:invalid_code}');

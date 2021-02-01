@@ -96,9 +96,17 @@ class Totp
         return $cipher->decrypt($secret);
     }
 
-    public function verifyCode($secret, $code)
+    public function verifyCode($secrets, $code)
     {
-        return $this->tfa->verifyCode($secret, $code);
+        if (!is_array($secrets)) {
+            $secrets = [$secrets];
+        }
+        foreach ($secrets as $secret) {
+            if ($this->tfa->verifyCode($secret, $code)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private static function getConfig()

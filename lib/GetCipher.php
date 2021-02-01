@@ -10,7 +10,6 @@ class GetCipher
     public static function getInstance($moduleConfig)
     {
         $cipherClass = $moduleConfig->getString('cipher', '\\SimpleSAML\\Module\\totp\\OpenSslCipher');
-        assert(in_array('\\SimpleSAML\\Module\\totp\\Cipher', class_implements($cipherClass), true));
         return new $cipherClass($moduleConfig);
     }
 }

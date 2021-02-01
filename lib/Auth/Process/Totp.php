@@ -22,7 +22,7 @@ class Totp extends ProcessingFilter
     /**
      * Value of the TOTP secret
      */
-    private $secret_val = null;
+    private $secret_vals = null;
 
     /**
      * Whether or not the user should be forced to use 2fa.
@@ -71,10 +71,10 @@ class Totp extends ProcessingFilter
 
         // check for secret_attr coming from user store and make sure it is not empty
         if (!empty($attributes[$this->secret_attr])) {
-            $this->secret_val = $attributes[$this->secret_attr][0];
+            $this->secret_vals = $attributes[$this->secret_attr];
         }
 
-        if ($this->secret_val === null && $this->enforce_2fa === true) {
+        if ($this->secret_vals === null && $this->enforce_2fa === true) {
             #2f is enforced and user does not have it configured..
             Logger::debug('User with ID xxx does not have 2f configured when it is
             mandatory for xxxSP');
@@ -85,16 +85,16 @@ class Totp extends ProcessingFilter
             } else {
                 HTTP::redirectTrustedURL(Module::getModuleURL('totp/not_configured.php'));
             }
-        } elseif ($this->secret_val === null && $this->enforce_2fa === false) {
+        } elseif ($this->secret_vals === null && $this->enforce_2fa === false) {
             Logger::debug('User with ID xxx does not have 2f configured but SP does not
             require it. Continue.');
             return;
         }
 
         //as the attribute is configurable, we need to store it in a consistent location
-        $state['2fa_secret'] = $this->secret_val;
+        $state['2fa_secrets'] = $this->secret_vals;
 
-        //this means we have secret_val configured for this session, time to 2fa
+        //this means we have secret_vals configured for this session, time to 2fa
         $id = State::saveState($state, 'totp:request');
         $url = Module::getModuleURL('totp/authenticate.php');
         HTTP::redirectTrustedURL($url, ['StateId' => $id]);

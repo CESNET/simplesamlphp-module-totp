@@ -34,7 +34,11 @@ class Totp
         self::PERIOD => 30,
         self::ALGORITHM => 'sha1',
         self::USER_ID_ATTRIBUTE => 'uid',
-        self::AUTHN_CONTEXT => 'https://refeds.org/profile/mfa',
+        self::AUTHN_CONTEXT => [
+            'https://refeds.org/profile/mfa',
+            'https://refeds.org/profile/sfa',
+            'urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport',
+        ],
         self::STORAGE => '\\SimpleSAML\\Module\\totp\\Storage\\StoreStorage',
     ];
 

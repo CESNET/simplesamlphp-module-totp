@@ -25,7 +25,6 @@ if (!isset($_REQUEST['StateId'])) {
 }
 
 $id = $_REQUEST['StateId'];
-
 $sid = State::parseStateID($id);
 if ($sid['url'] !== null) {
     HTTP::checkURLAllowed($sid['url']);
@@ -35,11 +34,22 @@ $state = State::loadState($id, 'totp:request');
 
 $t = new Template(Configuration::getInstance(), 'totp:authenticate.php');
 $t->data['formData'] = ['StateId' => $id];
+$t->data['skipRedirectUrl'] = $state['skip_redirect_url'];
 $t->data['formPost'] = Module::getModuleURL('totp/authenticate.php');
 
-if (isset($_REQUEST['code'])) {
+if(isset($_REQUEST['skip']) && !is_null($state['skip_redirect_url'])){
+    $state['Attributes']['MFA_RESULT'] = 'UnAuthenticated';
+    $id = State::saveState($state, 'authSwitcher:request');
+    HTTP::redirectTrustedURL($state['skip_redirect_url'], ['StateId' => $id]);
+} elseif (isset($_REQUEST['code'])) {
     if ($totp->verifyCode($state['2fa_secrets'], $_REQUEST['code'])) {
-        ProcessingChain::resumeProcessing($state);
+        if (!is_null($state['skip_redirect_url'])) {
+            $state['Attributes']['MFA_RESULT'] = 'Authenticated';
+            $id = State::saveState($state, 'authSwitcher:request');
+            HTTP::redirectTrustedURL($state['skip_redirect_url'], ['StateId' => $id]);
+        } else {
+            ProcessingChain::resumeProcessing($state);
+        }
     } else {
         $t->data['userError'] = $t->t('{totp:totp:invalid_code}');
     }

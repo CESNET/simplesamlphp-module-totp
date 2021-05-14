@@ -13,7 +13,8 @@
         "simplesamlphp/simplesamlphp": "~1.17",
         "simplesamlphp/composer-module-installer": "~1.0",
         "robthree/twofactorauth": "^1.7.0",
-        "bacon/bacon-qr-code": "^2.0.0"
+        "bacon/bacon-qr-code": "^2.0.0",
+        "ext-json": "*"
     },
     "require-dev": {
         "symplify/easy-coding-standard": "^7.2"

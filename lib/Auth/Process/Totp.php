@@ -38,13 +38,15 @@ class Totp extends ProcessingFilter
      */
     private $not_configured_url = null;
 
+    private $skip_redirect_url = null;
+
     /**
      * Initialize the filter.
      *
      * @param array $config  Configuration information about this filter.
      * @param mixed $reserved  For future use
      */
-    public function __construct($config, $reserved)
+    public function __construct(array $config, $reserved)
     {
         parent::__construct($config, $reserved);
 
@@ -52,6 +54,7 @@ class Totp extends ProcessingFilter
 
         $this->enforce_2fa = $config->getBoolean('enforce_2fa', $this->enforce_2fa);
         $this->secret_attr = $config->getString('secret_attr', $this->secret_attr);
+        $this->skip_redirect_url = $config->getString('skip_redirect_url', $this->skip_redirect_url);
         $this->not_configured_url = HTTP::checkURLAllowed(
             $config->getString('not_configured_url', $this->not_configured_url)
         );
@@ -93,12 +96,12 @@ class Totp extends ProcessingFilter
 
         //as the attribute is configurable, we need to store it in a consistent location
         $state['2fa_secrets'] = $this->secret_vals;
+        $state['skip_redirect_url'] = $this->skip_redirect_url;
 
         //this means we have secret_vals configured for this session, time to 2fa
         $id = State::saveState($state, 'totp:request');
         $url = Module::getModuleURL('totp/authenticate.php');
-        HTTP::redirectTrustedURL($url, ['StateId' => $id]);
 
-        return;
+        HTTP::redirectTrustedURL($url, ['StateId' => $id]);
     }
 }

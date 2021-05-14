@@ -21,4 +21,6 @@ $config = [
     //'authnContext' => 'https://refeds.org/profile/mfa',
     /** Encrypting class */
     //'cipher' => '\\SimpleSAML\\Module\\totp\\OpenSslCipher',
+    /** URL to return to, for example if using authswitcher */
+    //'skip_redirect_url' => 'https://.../',
 ];

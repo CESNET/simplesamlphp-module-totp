@@ -45,4 +45,25 @@ $config = [
      * URL to return to, for example if using authswitcher
      */
     'skip_redirect_url' => 'https://.../',
+
+    'PerunStorage' => [
+        'apiURL' => 'https://id.muni.cz/mfaapi/token',
+        'OIDCKeyStore' => '/var/oidc-keystore.jwks',
+        'OIDCKeyId' => 'rsa1',
+        'OIDCTokenTimeout' => 300,
+        'OIDCTokenAlg' => 'RS256',
+        'OIDCIssuer' => 'https://oidc.muni.cz/oidc/',
+        'OIDCClientId' => 'd574aeba-b2d0-4234-bcf0-53ec30b17ba4',
+        'database.dsn' => '',
+        'database.username' => '',
+        'database.password' => '',
+    ],
+
+    'Signing' => [
+        'signingEnabled' => true,
+        'signingKeystore' => '/var/oidc-keystore.jwks',
+        'signingAlg' => 'RS256',
+        'signingKeyId' => 'rsa1',
+        'supportedSignAlgs' => ['RS256'],
+    ],
 ];

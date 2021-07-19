@@ -96,6 +96,11 @@ class Totp
         $storage->store($userId, $secret, $label);
     }
 
+    /**
+     * @deprecated Function will be removed in the next major update.
+     * @param $secret
+     * @return mixed
+     */
     public static function decryptSecret($secret)
     {
         $cipher = GetCipher::getInstance(self::getConfig());

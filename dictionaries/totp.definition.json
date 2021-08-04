@@ -39,6 +39,10 @@
 		"en": "User: !userId",
 		"cs": "Uživatel: !userId"
 	},
+	"verify": {
+		"en": "verify",
+		"cs": "ověřit"
+	},
 	"skip_totp": {
 		"en": "I cannot use my TOTP device right now",
 		"cs": "Momentálně nemohu použít své TOTP zařízení"

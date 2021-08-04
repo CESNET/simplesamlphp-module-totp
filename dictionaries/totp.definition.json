@@ -16,8 +16,8 @@
 		"cs": "Chyba autentizace"
 	},
 	"totp_code": {
-		"en": "TOTP code:",
-		"cs": "Kód TOTP:"
+		"en": "TOTP code",
+		"cs": "Kód TOTP"
 	},
 	"totp_setup": {
 		"en": "TOTP setup",

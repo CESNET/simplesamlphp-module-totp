@@ -39,14 +39,14 @@ if (!empty($this->data['userError'])) {
     }
     ?>
 
-    <label for="code"><?php echo $this->t('{totp:totp:totp_code}'); ?></label>
-    <input name="code" autocomplete="one-time-code" type="number" step="1" max="9999999999" min="0" autofocus />
+    <label for="code"><?php echo $this->t('{totp:totp:totp_code}'); ?>:</label>
+    <input name="code" id="code" autocomplete="one-time-code" type="number" step="1" max="9999999999" min="0" autofocus />
     <input type="submit" value="<?php echo htmlspecialchars($this->t('{totp:totp:verify}')); ?>" />
     <?php
     if (!empty($this->data['skipRedirectUrl'])) {
         ?>
         <br>
-        <label for="skip_totp"><?php echo $this->t('{totp:totp:skip_totp}'); ?></label>
+        <label for="skip"><?php echo $this->t('{totp:totp:skip_totp}'); ?></label>
         <input type="submit" name="skip" value="<?php echo $this->t('{totp:totp:skip}'); ?>"/>
         <?php
     }

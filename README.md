@@ -17,13 +17,13 @@ Usage
 -----
 Like any other auth process filter, this module needs to be configured in an authproc array in either config.php or in the metadata for a particular service provider or identity provider.
 
-###Prerequisites
+### Prerequisites
 
 The ```secret_attr``` needs to be available in the attribute payload as it is used to generate the token for comparison.  This can be added using other auth process filters to look up an external databases of sorts (SQL, LDAP, etc).
 
 After the module has been called, the attribute will be moved out of the user attribute array.  As a safety precaution an extra step should be taken ensure this attribute is removed.  This can be done using the ```core:AttributeAlter``` filter or similar.
 
-###Example
+### Example
 
 Placed in either config.php's authproc or in the appropriate metadata entity:
 ```php
@@ -61,8 +61,8 @@ inside modules/exampleauth directory.
 	),
 ```
 
-After logging in with username: student password: studentpass, you will be challenged for TOTP.
-4HX4WBKVIJWDUV5I is a secret key that can be generate by visiting /simplesaml/module.php/totp/generate_token.php
+After logging in with username: `student`, password: `studentpass`, you will be challenged for TOTP.
+`4HX4WBKVIJWDUV5I` is a secret key that can be generate by visiting `/simplesaml/module.php/totp/generate_token.php`
 
 A random one will be generated everytime. You can also use the QR code to register your IdP with apps such as FreeOTP
 or Google Authenticator etc.

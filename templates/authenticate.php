@@ -40,7 +40,7 @@ if (!empty($this->data['userError'])) {
     ?>
 
     <label for="code"><?php echo $this->t('{totp:totp:totp_code}'); ?>:</label>
-    <input name="code" id="code" autocomplete="one-time-code" type="number" step="1" max="9999999999" min="0" autofocus />
+    <input name="code" id="code" autocomplete="one-time-code" type="text" inputmode="numeric" pattern="[0-9]{6,}" autofocus />
     <input type="submit" value="<?php echo htmlspecialchars($this->t('{totp:totp:verify}')); ?>" />
     <?php
     if (!empty($this->data['skipRedirectUrl'])) {

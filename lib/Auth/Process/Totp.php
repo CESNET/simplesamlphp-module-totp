@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SimpleSAML\Module\totp\Auth\Process;
 
 use SimpleSAML\Auth\ProcessingFilter;
@@ -25,16 +27,14 @@ class Totp extends ProcessingFilter
     private $secret_vals = null;
 
     /**
-     * Whether or not the user should be forced to use 2fa.
-     *  If false, a user that does not have a TOTP secret will be able to continue
-     *   authentication
+     * Whether or not the user should be forced to use 2fa. If false, a user that does not have a TOTP secret will be
+     * able to continue authentication
      */
     private $enforce_2fa = false;
 
     /**
-     * External URL to redirect user to if $enforce_2fa is true and they do not
-     *  have a TOTP attribute set.  If this attribute is NULL, the user will
-     *  be redirect to the internal error page.
+     * External URL to redirect user to if $enforce_2fa is true and they do not have a TOTP attribute set.  If this
+     * attribute is NULL, the user will be redirect to the internal error page.
      */
     private $not_configured_url = null;
 
@@ -63,7 +63,7 @@ class Totp extends ProcessingFilter
     /**
      * Apply TOTP filter
      *
-     * @param array &$state  The current state
+     * @param array $state  The current state
      */
     public function process(&$state)
     {
@@ -73,7 +73,7 @@ class Totp extends ProcessingFilter
         $attributes = $state['Attributes'];
 
         // check for secret_attr coming from user store and make sure it is not empty
-        if (!empty($attributes[$this->secret_attr])) {
+        if (! empty($attributes[$this->secret_attr])) {
             $this->secret_vals = $attributes[$this->secret_attr];
         }
 
@@ -102,6 +102,8 @@ class Totp extends ProcessingFilter
         $id = State::saveState($state, 'totp:request');
         $url = Module::getModuleURL('totp/authenticate.php');
 
-        HTTP::redirectTrustedURL($url, ['StateId' => $id]);
+        HTTP::redirectTrustedURL($url, [
+            'StateId' => $id,
+        ]);
     }
 }

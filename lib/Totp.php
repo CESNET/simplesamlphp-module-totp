@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SimpleSAML\Module\totp;
 
 use Exception;
@@ -102,7 +104,7 @@ class Totp
 
     public function verifyCode($secrets, $code)
     {
-        if (!is_array($secrets)) {
+        if (! is_array($secrets)) {
             $secrets = [$secrets];
         }
         foreach ($secrets as $secret) {

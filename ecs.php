@@ -16,21 +16,23 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     ;
 
     $parameters = $containerConfigurator->parameters();
-    $parameters->set(Option::PATHS, [__DIR__ . '/ecs.php', __DIR__ . '/www', __DIR__ . '/lib', __DIR__ . '/templates']);
+    $parameters->set(Option::PATHS, [
+        __DIR__ . '/ecs.php',
+        __DIR__ . '/config-templates',
+        __DIR__ . '/lib',
+        __DIR__ . '/templates',
+        __DIR__ . '/www',
+    ]);
 
-    $parameters->set(
-        Option::SETS,
-        [
-            SetList::ARRAY,
-            SetList::CLEAN_CODE,
-            SetList::COMMENTS,
-            SetList::COMMON,
-            SetList::CONTROL_STRUCTURES,
-            SetList::DOCBLOCK,
-            SetList::NAMESPACES,
-            SetList::PHPUNIT,
-            SetList::SPACES,
-            SetList::SYMPLIFY,
-        ]
-    );
+    $containerConfigurator->import(SetList::CLEAN_CODE);
+    $containerConfigurator->import(SetList::SYMPLIFY);
+    $containerConfigurator->import(SetList::ARRAY);
+    $containerConfigurator->import(SetList::COMMON);
+    $containerConfigurator->import(SetList::COMMENTS);
+    $containerConfigurator->import(SetList::CONTROL_STRUCTURES);
+    $containerConfigurator->import(SetList::DOCBLOCK);
+    $containerConfigurator->import(SetList::NAMESPACES);
+    $containerConfigurator->import(SetList::PHPUNIT);
+    $containerConfigurator->import(SetList::SPACES);
+    $containerConfigurator->import(SetList::PSR_12);
 };

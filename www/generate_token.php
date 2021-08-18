@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use SimpleSAML\Configuration;
 use SimpleSAML\Module\totp\Totp;
 use SimpleSAML\XHTML\Template;

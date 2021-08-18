@@ -1,8 +1,7 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
- * Template for error message users receive when they do not have a TOTP
- *  value when 2fa is enforced.
+ * Template for error message users receive when they do not have a TOTP value when 2fa is enforced.
  */
 
 use SimpleSAML\Module;

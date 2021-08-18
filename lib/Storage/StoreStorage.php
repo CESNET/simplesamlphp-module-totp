@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SimpleSAML\Module\totp\Storage;
 
 use SimpleSAML\Module\totp\Storage;

@@ -1,16 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SimpleSAML\Module\totp;
 
 class OpenSslCipher implements Cipher
 {
     /**
-     * Table of pairs in the form of (cipherAlgorithm, hashAlgorithm).
-        The newest one (with highest index) is used for encryption, but the old ones can still be decrypted.
+     * Table of pairs in the form of (cipherAlgorithm, hashAlgorithm). The newest one (with highest index) is used for
+     * encryption, but the old ones can still be decrypted.
      */
-    private const CIPHERS = [
-        ['aes-256-ecb', 'sha512'],
-    ];
+    private const CIPHERS = [['aes-256-ecb', 'sha512']];
 
     /**
      * Length of the second key

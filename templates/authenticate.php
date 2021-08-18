@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * Template form for submitting 2fa codes
@@ -19,7 +19,7 @@ $this->includeAtTemplateBase('includes/header.php');
 <p><?php echo $this->t('{totp:totp:2fa_required_description}'); ?></p>
 <p><?php echo $this->t('{totp:totp:ask_helpdesk}'); ?></p>
 <?php
-if (!empty($this->data['userError'])) {
+if (! empty($this->data['userError'])) {
     ?>
     <div class="totp-error">
         <img src="/<?php echo $this->data['baseurlpath']; ?>resources/icons/experience/gtk-dialog-error.48x48.png"
@@ -43,7 +43,7 @@ if (!empty($this->data['userError'])) {
     <input name="code" id="code" autocomplete="one-time-code" type="text" inputmode="numeric" pattern="[0-9]{6,}" autofocus />
     <input type="submit" value="<?php echo htmlspecialchars($this->t('{totp:totp:verify}')); ?>" />
     <?php
-    if (!empty($this->data['skipRedirectUrl'])) {
+    if (! empty($this->data['skipRedirectUrl'])) {
         ?>
         <br>
         <label for="skip"><?php echo $this->t('{totp:totp:skip_totp}'); ?></label>

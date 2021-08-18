@@ -1,15 +1,15 @@
 .warning {
-    color: #9F6000;
-    background-color: #FEEFB3;
-    background-image: url('warning.png');
+  color: #9f6000;
+  background-color: #feefb3;
+  background-image: url("warning.png");
 }
 .error {
-    color: #D8000C;
-    background-color: #FFBABA;
-    background-image: url('error.png');
+  color: #d8000c;
+  background-color: #ffbaba;
+  background-image: url("error.png");
 }
 .totp-error {
-    border-left: 1px solid #e8e8e8;
-    border-bottom: 1px solid #e8e8e8;
-    background: #f5f5f5;
+  border-left: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+  background: #f5f5f5;
 }

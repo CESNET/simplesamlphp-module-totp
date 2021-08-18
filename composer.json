@@ -1,22 +1,22 @@
 {
-    "name": "melanger/simplesamlphp-module-totp",
-    "description": "A simple TOTP module for SimpleSAMLphp, based on SimpleTOTP, rewritten using the TwoFactorAuth library by RobThree",
-    "authors": [
-        {
-            "name": "Pavel Břoušek",
-            "email": "brousek@ics.muni.cz"
-        }
-    ],
-    "type": "simplesamlphp-module",
-    "require": {
-        "php": ">=7.1.0",
-        "simplesamlphp/simplesamlphp": "~1.17",
-        "simplesamlphp/composer-module-installer": "~1.0",
-        "robthree/twofactorauth": "^1.7.0",
-        "bacon/bacon-qr-code": "^2.0.0",
-        "ext-json": "*"
-    },
-    "require-dev": {
-        "symplify/easy-coding-standard": "^9.3"
+  "name": "melanger/simplesamlphp-module-totp",
+  "description": "A simple TOTP module for SimpleSAMLphp, based on SimpleTOTP, rewritten using the TwoFactorAuth library by RobThree",
+  "authors": [
+    {
+      "name": "Pavel Břoušek",
+      "email": "brousek@ics.muni.cz"
     }
+  ],
+  "type": "simplesamlphp-module",
+  "require": {
+    "php": ">=7.1.0",
+    "simplesamlphp/simplesamlphp": "~1.17",
+    "simplesamlphp/composer-module-installer": "~1.0",
+    "robthree/twofactorauth": "^1.7.0",
+    "bacon/bacon-qr-code": "^2.0.0",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "symplify/easy-coding-standard": "^9.3"
+  }
 }

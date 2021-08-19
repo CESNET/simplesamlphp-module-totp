@@ -1,3 +1,10 @@
+# [1.1.0](https://gitlab.ics.muni.cz/perun/proxyaai/simplesamlphp/simplesamlphp-module-totp/compare/v1.0.0...v1.1.0) (2021-08-19)
+
+
+### Features
+
+* token signature support, DecryptSecrets filter, storage classes ([fdde0ef](https://gitlab.ics.muni.cz/perun/proxyaai/simplesamlphp/simplesamlphp-module-totp/commit/fdde0ef1cfe8c50ab71f70f3bb475daba0c05204))
+
 # 1.0.0 (2021-08-18)
 
 

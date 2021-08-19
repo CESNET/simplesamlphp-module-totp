@@ -14,7 +14,17 @@
     "simplesamlphp/composer-module-installer": "~1.0",
     "robthree/twofactorauth": "^1.7.0",
     "bacon/bacon-qr-code": "^2.0.0",
-    "ext-json": "*"
+    "ext-json": "*",
+    "ext-curl": "*",
+    "web-token/jwt-easy": "^2.2",
+    "web-token/jwt-signature": "^2.2",
+    "web-token/jwt-core": "^2.2",
+    "web-token/jwt-signature-algorithm-rsa": "^2.2"
+  },
+  "suggest": {
+    "web-token/jwt-signature-algorithm-ecdsa": "Adds ECDSA based signature algorithms",
+    "web-token/jwt-signature-algorithm-eddsa": "Adds EdDSA based signature algorithms",
+    "web-token/jwt-signature-algorithm-hmac": "Adds HMAC based signature algorithms"
   },
   "require-dev": {
     "symplify/easy-coding-standard": "^9.3"

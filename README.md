@@ -72,6 +72,16 @@ or Google Authenticator etc.
 
 ## Installation
 
+## DecryptSecrets filter
+
+DecryptSecrets filter decrypts encrypted secrets and save them to Attributes array. This filter also supports verification of signed secrets and takes configuration options from module_totp.php. If secret signature verification fails the token can not be used.
+
+## Perun integration
+
+In order to use PerunStorage and sync tokens with Perun, you have to add PerunStorage array with configuration options to `module_totp.php`:
+
+## Installation
+
 ### Via Git
 
 A simple `git clone` in the SimpleSAMLphp module directory is all that is required.

@@ -88,6 +88,7 @@ class OpenSslCipher implements Cipher
      */
     private static function padNumber($number, int $pad_length)
     {
+        $number = strval($number);
         return str_pad($number, $pad_length, '0', STR_PAD_LEFT);
     }
 }

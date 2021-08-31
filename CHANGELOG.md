@@ -1,3 +1,10 @@
+# [1.2.0](https://gitlab.ics.muni.cz/perun/proxyaai/simplesamlphp/simplesamlphp-module-totp/compare/v1.1.0...v1.2.0) (2021-08-31)
+
+
+### Features
+
+* prevent generate token refresh ([25d7430](https://gitlab.ics.muni.cz/perun/proxyaai/simplesamlphp/simplesamlphp-module-totp/commit/25d74307213fd8a1318078ae242a1de65b99f410))
+
 # [1.1.0](https://gitlab.ics.muni.cz/perun/proxyaai/simplesamlphp/simplesamlphp-module-totp/compare/v1.0.0...v1.1.0) (2021-08-19)
 
 

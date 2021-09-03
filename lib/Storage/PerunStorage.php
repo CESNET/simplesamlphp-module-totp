@@ -110,9 +110,7 @@ class PerunStorage extends DatabaseStorage
                 ->build();
             $serializer = new CompactSerializer();
 
-            return [
-                'payload' => $serializer->serialize($jws, 0),
-            ];
+            return $serializer->serialize($jws, 0);
         }
         return $data;
     }

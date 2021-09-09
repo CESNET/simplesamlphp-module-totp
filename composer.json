@@ -16,6 +16,7 @@
     "bacon/bacon-qr-code": "^2.0.0",
     "ext-json": "*",
     "ext-curl": "*",
+    "ext-imagick": "*",
     "web-token/jwt-easy": "^2.2",
     "web-token/jwt-signature": "^2.2",
     "web-token/jwt-core": "^2.2",

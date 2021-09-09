@@ -1,3 +1,10 @@
+## [1.2.1](https://gitlab.ics.muni.cz/perun/proxyaai/simplesamlphp/simplesamlphp-module-totp/compare/v1.2.0...v1.2.1) (2021-09-09)
+
+
+### Bug Fixes
+
+* added ext-imagick to composer.json ([6b19fc8](https://gitlab.ics.muni.cz/perun/proxyaai/simplesamlphp/simplesamlphp-module-totp/commit/6b19fc839b418f560e1b9861297bb61d4b0f00b0))
+
 # [1.2.0](https://gitlab.ics.muni.cz/perun/proxyaai/simplesamlphp/simplesamlphp-module-totp/compare/v1.1.0...v1.2.0) (2021-08-31)
 
 

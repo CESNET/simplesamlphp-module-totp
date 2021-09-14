@@ -78,7 +78,7 @@ class DecryptSecrets extends ProcessingFilter
     private function decryptTokenData($tokenData, $attributes)
     {
         # isset($tokenData['payload']) condition for backward compatibility (unsigned tokens will be skipped)
-        if ($this->signing_enabled && isset($tokenData['payload'])) {
+        if ($this->signing_enabled && ! isset($tokenData['secret'])) {
             $userId = $attributes[$this->user_id_attribute][0];
             $sign_jwkset = JWKSet::createFromJson(file_get_contents($this->signing_keystore));
             $sign_jwk = $sign_jwkset->get($this->signing_key_id);
@@ -93,7 +93,7 @@ class DecryptSecrets extends ProcessingFilter
 
             $serializerManager = new JWSSerializerManager([new CompactSerializer()]);
 
-            $jws = $serializerManager->unserialize($tokenData['payload']);
+            $jws = $serializerManager->unserialize($tokenData);
             if (! $jwsVerifier->verifyWithKey($jws, $sign_jwk, 0)) {
                 Logger::debug('SIGNED SECRET NOT VERIFIED');
                 return null;
@@ -110,7 +110,7 @@ class DecryptSecrets extends ProcessingFilter
             }
         }
         # !isset($tokenData['payload']) condition for backward compatibility (signed tokens will be skipped)
-        elseif (! $this->signing_enabled && ! isset($tokenData['payload'])) {
+        elseif (! $this->signing_enabled && isset($tokenData['secret'])) {
             $cipher = GetCipher::getInstance(Configuration::getOptionalConfig(self::MODULE_CONFIG_FILE));
             return $cipher->decrypt($tokenData['secret']);
         }

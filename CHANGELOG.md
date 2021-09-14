@@ -1,3 +1,15 @@
+# [2.0.0](https://gitlab.ics.muni.cz/perun/proxyaai/simplesamlphp/simplesamlphp-module-totp/compare/v1.2.1...v2.0.0) (2021-09-14)
+
+
+### Bug Fixes
+
+* generate tokens refresh fixed, signing tokens data changed ([95da413](https://gitlab.ics.muni.cz/perun/proxyaai/simplesamlphp/simplesamlphp-module-totp/commit/95da41387fa165f254c87e9cd86f76baf90ad440))
+
+
+### BREAKING CHANGES
+
+* Removed "payload" from signed tokens data
+
 ## [1.2.1](https://gitlab.ics.muni.cz/perun/proxyaai/simplesamlphp/simplesamlphp-module-totp/compare/v1.2.0...v1.2.1) (2021-09-09)
 
 

@@ -2,7 +2,7 @@
 
 TOTP is a [SimpleSAMLphp](https://simplesamlphp.org/) [auth processing filter](https://simplesamlphp.org/docs/stable/simplesamlphp-authproc) that enables the use of the _Time-Based One-Time Password Algorithm_ (TOTP) as a second-factor authentication mechanism on either an Identity Provider or Service Provider (or both).
 
-This has been tested with Google Authenticator and FreeOTP.
+This module is inspired by [SimpleTOTP by Aidan Rowe](https://github.com/aidan-/SimpleTOTP) but uses the [PHP library for Two Factor Authentication by Rob Janssen](https://github.com/RobThree/TwoFactorAuth). It can use SSP default storage or database for the secrets, or integrate with [Perun IDM](https://github.com/CESNET/perun).
 
 As an auth processing filter, this module is flexible in a number of ways:
 
@@ -82,3 +82,10 @@ This module uses Composer for dependencies. To install it, clone the repository 
 ## Notes
 
 This module does not offer brute force protection, which is required to ensure security (there are only 100000 options for a 6 digit code). The authentication page should be brute force protected in order to stop potential attackers.
+
+## License
+
+This module is licensed under the BSD 2-Clause License.
+
+Copyright (c) 2021, Institute of Computer Science, Masaryk University and CESNET, z. s. p. o.
+All rights reserved.

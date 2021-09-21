@@ -1,12 +1,8 @@
 # TOTP
 
-TOTP is a [SimpleSAMLphp](https://simplesamlphp.org/) [auth processing filter](https://simplesamlphp.org/docs/stable/simplesamlphp-authproc) that enables the use of the _Time-Based One-Time Password Algorithm_ (TOTP) as a second-factor authentication mechanism on either an Identity Provider or Service Provider (...or both!).
+TOTP is a [SimpleSAMLphp](https://simplesamlphp.org/) [auth processing filter](https://simplesamlphp.org/docs/stable/simplesamlphp-authproc) that enables the use of the _Time-Based One-Time Password Algorithm_ (TOTP) as a second-factor authentication mechanism on either an Identity Provider or Service Provider (or both).
 
-This has been tested with _Google Authenticator_ on iOS and Android.
-
-## Why?
-
-While a there are a few two-factor authentication modules that already exist for SimpleSAMLphp, they are all implemented as [authentication sources](https://simplesamlphp.org/docs/stable/simplesamlphp-authsource).
+This has been tested with Google Authenticator and FreeOTP.
 
 As an auth processing filter, this module is flexible in a number of ways:
 
@@ -41,7 +37,7 @@ Placed in config.php authproc as one of the last functions to be processed:
 ```php
 99 => array(
 	'class' => 'core:AttributeAlter',
-	'subject' => 'ga_secret',
+	'subject' => 'totp_secret',
 	'pattern' => '/.*/',
 	'%remove',
 ),
@@ -65,8 +61,7 @@ inside modules/exampleauth directory.
 After logging in with username: `student`, password: `studentpass`, you will be challenged for TOTP.
 `4HX4WBKVIJWDUV5I` is a secret key that can be generate by visiting `/simplesaml/module.php/totp/generate_token.php`
 
-A random one will be generated everytime. You can also use the QR code to register your IdP with apps such as FreeOTP
-or Google Authenticator etc.
+A random one will be generated on the first load and saved in the session. A new token is generated when the page is visited with a fresh session. You can use the QR code to register your IdP with apps such as FreeOTP, Google Authenticator etc.
 
 **NOTE**: for TOTP to work you **MUST** ensure that the clock on your server is in sync. If it is not, a matching token will never be generated and authentication will fail.
 
@@ -78,15 +73,12 @@ DecryptSecrets filter decrypts encrypted secrets and save them to Attributes arr
 
 ## Perun integration
 
-In order to use PerunStorage and sync tokens with Perun, you have to add PerunStorage array with configuration options to `module_totp.php`:
+In order to use PerunStorage and sync tokens with Perun, you have to add PerunStorage array with configuration options to `module_totp.php`.
 
 ## Installation
 
-### Via Git
+This module uses Composer for dependencies. To install it, clone the repository and use `composer install`.
 
-A simple `git clone` in the SimpleSAMLphp module directory is all that is required.
+## Notes
 
-## TODO
-
-- improve usage documentation with examples using external database(s) as data sources
-- add basic brute force prevention
+This module does not offer brute force protection, which is required to ensure security (there are only 100000 options for a 6 digit code). The authentication page should be brute force protected in order to stop potential attackers.

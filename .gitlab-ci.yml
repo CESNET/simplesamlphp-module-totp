@@ -56,5 +56,5 @@ publish:
     - .npm
   script:
     - npx semantic-release
-  only:
-    - master
+  rules:
+    - if: $CI_DEFAULT_BRANCH == $CI_COMMIT_REF_NAME

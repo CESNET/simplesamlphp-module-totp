@@ -89,5 +89,3 @@ This module is licensed under the BSD 2-Clause License.
 
 Copyright (c) 2021, Institute of Computer Science, Masaryk University and CESNET, z. s. p. o.
 All rights reserved.
-
-

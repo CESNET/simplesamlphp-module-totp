@@ -1,5 +1,5 @@
 {
-  "name": "melanger/simplesamlphp-module-totp",
+  "name": "cesnet/simplesamlphp-module-totp",
   "description": "A simple TOTP module for SimpleSAMLphp, based on SimpleTOTP, rewritten using the TwoFactorAuth library by RobThree",
   "authors": [
     {

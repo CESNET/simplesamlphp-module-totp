@@ -27,7 +27,7 @@ jobs:
         with:
           php_version: ${{ matrix.php-version }}
           version: ${{ matrix.composer-version }}
-          php_extensions: json
+          php_extensions: json imagick curl
       - name: Easy coding standard
         run: ./vendor/bin/ecs check
   prettier:

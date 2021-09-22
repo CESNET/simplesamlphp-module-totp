@@ -10,16 +10,16 @@
   "type": "simplesamlphp-module",
   "require": {
     "php": "^7.2",
-    "simplesamlphp/composer-module-installer": "~1.0",
-    "robthree/twofactorauth": "^1.7.0",
-    "bacon/bacon-qr-code": "^2.0.0",
+    "simplesamlphp/composer-module-installer": "1.1.8",
+    "robthree/twofactorauth": "1.8.0",
+    "bacon/bacon-qr-code": "2.0.4",
     "ext-json": "*",
     "ext-curl": "*",
     "ext-imagick": "*",
-    "web-token/jwt-easy": "^2.2",
-    "web-token/jwt-signature": "^2.2",
-    "web-token/jwt-core": "^2.2",
-    "web-token/jwt-signature-algorithm-rsa": "^2.2"
+    "web-token/jwt-easy": "2.2.11",
+    "web-token/jwt-signature": "2.2.11",
+    "web-token/jwt-core": "2.2.11",
+    "web-token/jwt-signature-algorithm-rsa": "2.2.11"
   },
   "suggest": {
     "web-token/jwt-signature-algorithm-ecdsa": "Adds ECDSA based signature algorithms",
@@ -27,6 +27,6 @@
     "web-token/jwt-signature-algorithm-hmac": "Adds HMAC based signature algorithms"
   },
   "require-dev": {
-    "symplify/easy-coding-standard": "^9.3"
+    "symplify/easy-coding-standard": "9.4.30"
   }
 }

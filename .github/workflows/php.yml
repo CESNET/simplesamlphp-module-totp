@@ -42,11 +42,9 @@ jobs:
       - name: Prettify code
         uses: creyD/prettier_action@v4.0
         with:
-          commit_message: "style(prettier): automatic prettier run"
-          prettier_options: --write **/*.{js,json,md,yml,yaml}
+          dry: True
+          prettier_options: --check **/*.*
           only_changed: True
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   release:
     name: Release
     needs: [php, prettier]

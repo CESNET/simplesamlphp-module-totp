@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/CESNET/simplesamlphp-module-totp/compare/v2.0.0...v3.0.0) (2021-09-22)
+
+
+### Bug Fixes
+
+* composer package name cesnet ([8eaab0f](https://github.com/CESNET/simplesamlphp-module-totp/commit/8eaab0fc401e097d737984e8ad2e233f631caf56))
+
+
+### BREAKING CHANGES
+
+* new package name cesnet/simplesamlphp-module-totp
+
 # [2.0.0](https://gitlab.ics.muni.cz/perun/proxyaai/simplesamlphp/simplesamlphp-module-totp/compare/v1.2.1...v2.0.0) (2021-09-14)
 
 

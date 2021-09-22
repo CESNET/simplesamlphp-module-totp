@@ -9,8 +9,7 @@
   ],
   "type": "simplesamlphp-module",
   "require": {
-    "php": ">=7.1.0",
-    "simplesamlphp/simplesamlphp": "~1.17",
+    "php": "^7.2",
     "simplesamlphp/composer-module-installer": "~1.0",
     "robthree/twofactorauth": "^1.7.0",
     "bacon/bacon-qr-code": "^2.0.0",

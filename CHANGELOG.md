@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/CESNET/simplesamlphp-module-totp/compare/v3.0.0...v3.0.1) (2021-09-22)
+
+
+### Bug Fixes
+
+* **deps:** pin dependencies ([1ea97db](https://github.com/CESNET/simplesamlphp-module-totp/commit/1ea97dbbcd9e69e72c3412de1eb7a7a409f6f75a))
+
 # [3.0.0](https://github.com/CESNET/simplesamlphp-module-totp/compare/v2.0.0...v3.0.0) (2021-09-22)
 
 

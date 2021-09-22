@@ -36,15 +36,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
-          ref: ${{ github.head_ref }}
-          fetch-depth: 0
-      - name: Prettify code
-        uses: creyD/prettier_action@v4.0
-        with:
-          dry: True
-          prettier_options: --check **/*.*
-          only_changed: True
+          node-version: "16"
+      - run: npm i
+      - run: npx prettier --check .
   release:
     name: Release
     needs: [php, prettier]

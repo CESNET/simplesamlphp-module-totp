@@ -27,6 +27,10 @@
     "en": "Scan this QR code with your TOTP app (Google Authenticator, FreeOTP or any other):",
     "cs": "Naskenujte tento QR kód svou TOTP aplikací (Google Authenticator, FreeOTP nebo jinou):"
   },
+  "manual_code": {
+    "en": "If you cannot scan the QR code, enter the following secret manually:",
+    "cs": "Pokud nemůžete naskenovat QR kód, opiště následující text:"
+  },
   "totp_not_configured": {
     "en": "It seems you do not have two-factor authentication configured. This system has been configured such that it is mandatory to use two-factor authentication.",
     "cs": "Vypadá to, že nemáte nastavenu dvoufaktorovu autentizaci, ale tento systém ji vyžaduje."

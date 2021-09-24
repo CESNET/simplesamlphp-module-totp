@@ -18,6 +18,8 @@ $this->includeAtTemplateBase('includes/header.php');
 <p><?php echo $this->t('{totp:totp:user}', [
     '!userId' => $this->data['userId'],
 ]); ?></p>
+<p><?php echo $this->t('{totp:totp:manual_code}'); ?></p>
+<input type="text" readonly autocomplete="off" value="<?php echo $this->data['secret']; ?>" size="<?php echo strlen($this->data['secret']); ?>">
 
 <?php
 $this->includeAtTemplateBase('includes/footer.php');

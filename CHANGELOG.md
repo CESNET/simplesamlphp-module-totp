@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/CESNET/simplesamlphp-module-totp/compare/v3.0.1...v3.1.0) (2021-09-24)
+
+
+### Features
+
+* show TOTP secret under the QR code ([80a38af](https://github.com/CESNET/simplesamlphp-module-totp/commit/80a38af27dd258ff7bc4ba9f02fc92366cb0c4c2)), closes [#10](https://github.com/CESNET/simplesamlphp-module-totp/issues/10)
+
 ## [3.0.1](https://github.com/CESNET/simplesamlphp-module-totp/compare/v3.0.0...v3.0.1) (2021-09-22)
 
 

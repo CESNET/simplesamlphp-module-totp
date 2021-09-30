@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f4e8a93d6ba94c5afca2c08dfa2f340d",
+    "content-hash": "a2f2431099a3b8b86f4a038bc614a920",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -5755,16 +5755,16 @@
     "packages-dev": [
         {
             "name": "symplify/easy-coding-standard",
-            "version": "9.4.67",
+            "version": "9.4.69",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symplify/easy-coding-standard.git",
-                "reference": "04bedf112d5a2e4c559d72e1fe6c9380bf0de7c4"
+                "reference": "47ccd0b825b70b98f8b427208f4b7d4f1023ce5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symplify/easy-coding-standard/zipball/04bedf112d5a2e4c559d72e1fe6c9380bf0de7c4",
-                "reference": "04bedf112d5a2e4c559d72e1fe6c9380bf0de7c4",
+                "url": "https://api.github.com/repos/symplify/easy-coding-standard/zipball/47ccd0b825b70b98f8b427208f4b7d4f1023ce5e",
+                "reference": "47ccd0b825b70b98f8b427208f4b7d4f1023ce5e",
                 "shasum": ""
             },
             "require": {
@@ -5789,7 +5789,7 @@
             ],
             "description": "Prefixed scoped version of ECS package",
             "support": {
-                "source": "https://github.com/symplify/easy-coding-standard/tree/9.4.67"
+                "source": "https://github.com/symplify/easy-coding-standard/tree/9.4.69"
             },
             "funding": [
                 {
@@ -5801,7 +5801,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-09-28T12:06:53+00:00"
+            "time": "2021-09-30T07:40:27+00:00"
         }
     ],
     "aliases": [],

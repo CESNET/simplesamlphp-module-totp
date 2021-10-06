@@ -1,12 +1,18 @@
 {
   "extends": [
-    "config:base"
+    "config:base",
+    ":automergeBranch",
+    ":automergeLinters",
+    ":automergePatch",
+    ":automergeTesters",
+    ":enableVulnerabilityAlertsWithLabel(security)",
+    ":maintainLockFilesWeekly",
+    ":pinOnlyDevDependencies",
+    ":prNotPending",
+    ":rebaseStalePrs",
+    ":semanticCommits",
+    "npm:unpublishSafe"
   ],
-  "packageRules": [
-    {
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "matchDepTypes": ["devDependency", "require-dev", "action"],
-      "automerge": true
-    }
-  ]
+  "stabilityDays": 3,
+  "transitiveRemediation": true
 }

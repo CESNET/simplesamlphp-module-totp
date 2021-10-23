@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d9621998e5c20a244130fe644868bbb2",
+    "content-hash": "207aa06832a231eedfe8ec6db2f8472c",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -791,16 +791,16 @@
         },
         {
             "name": "robthree/twofactorauth",
-            "version": "1.8.0",
+            "version": "1.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RobThree/TwoFactorAuth.git",
-                "reference": "30a38627ae1e7c9399dae67e265063cd6ec5276c"
+                "reference": "5afcb45282f1c75562a48d479ecd1732c9bdb11b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RobThree/TwoFactorAuth/zipball/30a38627ae1e7c9399dae67e265063cd6ec5276c",
-                "reference": "30a38627ae1e7c9399dae67e265063cd6ec5276c",
+                "url": "https://api.github.com/repos/RobThree/TwoFactorAuth/zipball/5afcb45282f1c75562a48d479ecd1732c9bdb11b",
+                "reference": "5afcb45282f1c75562a48d479ecd1732c9bdb11b",
                 "shasum": ""
             },
             "require": {
@@ -857,7 +857,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-03-09T18:24:05+00:00"
+            "time": "2021-10-20T12:19:55+00:00"
         },
         {
             "name": "simplesamlphp/assert",

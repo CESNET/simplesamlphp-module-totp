@@ -1,3 +1,10 @@
+## [3.1.2](https://github.com/CESNET/simplesamlphp-module-totp/compare/v3.1.1...v3.1.2) (2021-11-01)
+
+
+### Bug Fixes
+
+* add license to composer.json ([d80a270](https://github.com/CESNET/simplesamlphp-module-totp/commit/d80a2701e0386276573ae5223bdf842e86aa919d))
+
 ## [3.1.1](https://github.com/CESNET/simplesamlphp-module-totp/compare/v3.1.0...v3.1.1) (2021-10-23)
 
 

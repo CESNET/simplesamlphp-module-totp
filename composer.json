@@ -5,8 +5,13 @@
     {
       "name": "Pavel Břoušek",
       "email": "brousek@ics.muni.cz"
+    },
+    {
+      "name": "Jan Pavlíček",
+      "email": "469355@muni.cz"
     }
   ],
+  "license": "BSD-2-Clause",
   "type": "simplesamlphp-module",
   "require": {
     "php": "^7.2",

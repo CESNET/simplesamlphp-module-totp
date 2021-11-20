@@ -16,13 +16,12 @@ use Jose\Easy\Build;
 use SimpleSAML\Configuration;
 use SimpleSAML\Logger;
 
-class PerunStorage extends DatabaseStorage
+class PerunStorage
 {
     protected const CONFIG_FILE = 'module_totp.php';
 
     public function __construct()
     {
-        parent::__construct();
     }
 
     public function store($userId, $secret, $label = '')

@@ -1,3 +1,10 @@
+## [3.1.3](https://github.com/CESNET/simplesamlphp-module-totp/compare/v3.1.2...v3.1.3) (2021-11-20)
+
+
+### Bug Fixes
+
+* PerunStorage does not extend DatabaseStorage ([c727f90](https://github.com/CESNET/simplesamlphp-module-totp/commit/c727f90505eec1cb65c7ce241dfd9beb5da4cb3b))
+
 ## [3.1.2](https://github.com/CESNET/simplesamlphp-module-totp/compare/v3.1.1...v3.1.2) (2021-11-01)
 
 

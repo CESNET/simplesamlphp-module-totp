@@ -10,6 +10,8 @@ class UtilsCryptoCipher implements Cipher
 {
     /**
      * @override
+     *
+     * @param mixed $moduleConfig
      */
     public function __construct($moduleConfig)
     {
@@ -17,6 +19,8 @@ class UtilsCryptoCipher implements Cipher
 
     /**
      * @override
+     *
+     * @param mixed $data
      */
     public function encrypt($data)
     {
@@ -25,6 +29,8 @@ class UtilsCryptoCipher implements Cipher
 
     /**
      * @override
+     *
+     * @param mixed $data
      */
     public function decrypt($data)
     {

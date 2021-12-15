@@ -79,6 +79,7 @@ class Totp
         if (empty($attributes[$userIdAttribute])) {
             throw new Exception('Missing attribute ' . $userIdAttribute);
         }
+
         return $attributes[$userIdAttribute][0];
     }
 
@@ -97,19 +98,22 @@ class Totp
     }
 
     /**
-     * @deprecated Function will be removed in the next major update.
+     * @deprecated function will be removed in the next major update
+     *
      * @param $secret
+     *
      * @return mixed
      */
     public static function decryptSecret($secret)
     {
         $cipher = GetCipher::getInstance(self::getConfig());
+
         return $cipher->decrypt($secret);
     }
 
     public function verifyCode($secrets, $code)
     {
-        if (! is_array($secrets)) {
+        if (!is_array($secrets)) {
             $secrets = [$secrets];
         }
         foreach ($secrets as $secret) {
@@ -117,6 +121,7 @@ class Totp
                 return true;
             }
         }
+
         return false;
     }
 

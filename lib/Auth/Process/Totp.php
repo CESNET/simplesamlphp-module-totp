@@ -12,23 +12,23 @@ use SimpleSAML\Module;
 use SimpleSAML\Utils\HTTP;
 
 /**
- * TOTP Authentication Processing filter
+ * TOTP Authentication Processing filter.
  */
 class Totp extends ProcessingFilter
 {
     /**
-     * Attribute that stores the TOTP secret
+     * Attribute that stores the TOTP secret.
      */
     private $secret_attr = 'totp_secret';
 
     /**
-     * Value of the TOTP secret
+     * Value of the TOTP secret.
      */
-    private $secret_vals = null;
+    private $secret_vals;
 
     /**
      * Whether or not the user should be forced to use 2fa. If false, a user that does not have a TOTP secret will be
-     * able to continue authentication
+     * able to continue authentication.
      */
     private $enforce_2fa = false;
 
@@ -36,15 +36,15 @@ class Totp extends ProcessingFilter
      * External URL to redirect user to if $enforce_2fa is true and they do not have a TOTP attribute set.  If this
      * attribute is NULL, the user will be redirect to the internal error page.
      */
-    private $not_configured_url = null;
+    private $not_configured_url;
 
-    private $skip_redirect_url = null;
+    private $skip_redirect_url;
 
     /**
      * Initialize the filter.
      *
-     * @param array $config  Configuration information about this filter.
-     * @param mixed $reserved  For future use
+     * @param array $config   configuration information about this filter
+     * @param mixed $reserved For future use
      */
     public function __construct(array $config, $reserved)
     {
@@ -61,9 +61,9 @@ class Totp extends ProcessingFilter
     }
 
     /**
-     * Apply TOTP filter
+     * Apply TOTP filter.
      *
-     * @param array $state  The current state
+     * @param array $state The current state
      */
     public function process(&$state)
     {
@@ -73,24 +73,25 @@ class Totp extends ProcessingFilter
         $attributes = $state['Attributes'];
 
         // check for secret_attr coming from user store and make sure it is not empty
-        if (! empty($attributes[$this->secret_attr])) {
+        if (!empty($attributes[$this->secret_attr])) {
             $this->secret_vals = $attributes[$this->secret_attr];
         }
 
-        if ($this->secret_vals === null && $this->enforce_2fa === true) {
-            #2f is enforced and user does not have it configured..
+        if (null === $this->secret_vals && true === $this->enforce_2fa) {
+            //2f is enforced and user does not have it configured..
             Logger::debug('User with ID xxx does not have 2f configured when it is
             mandatory for xxxSP');
 
             //send user to custom error page if configured
-            if ($this->not_configured_url !== null) {
+            if (null !== $this->not_configured_url) {
                 HTTP::redirectUntrustedURL($this->not_configured_url);
             } else {
                 HTTP::redirectTrustedURL(Module::getModuleURL('totp/not_configured.php'));
             }
-        } elseif ($this->secret_vals === null && $this->enforce_2fa === false) {
+        } elseif (null === $this->secret_vals && false === $this->enforce_2fa) {
             Logger::debug('User with ID xxx does not have 2f configured but SP does not
             require it. Continue.');
+
             return;
         }
 

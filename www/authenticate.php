@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /**
- * TOTP Authenticate script
+ * TOTP Authenticate script.
  *
  * This script displays a page to the user, which requests that they submit the response from their TOTP generator.
  */
@@ -19,13 +19,13 @@ use SimpleSAML\XHTML\Template;
 
 $totp = new Totp();
 
-if (! isset($_REQUEST['StateId'])) {
+if (!isset($_REQUEST['StateId'])) {
     throw new BadRequest('Missing required StateId query parameter.');
 }
 
 $id = $_REQUEST['StateId'];
 $sid = State::parseStateID($id);
-if ($sid['url'] !== null) {
+if (null !== $sid['url']) {
     HTTP::checkURLAllowed($sid['url']);
 }
 
@@ -38,7 +38,7 @@ $t->data['formData'] = [
 $t->data['skipRedirectUrl'] = $state['skip_redirect_url'];
 $t->data['formPost'] = Module::getModuleURL('totp/authenticate.php');
 
-if (isset($_REQUEST['skip']) && $state['skip_redirect_url'] !== null) {
+if (isset($_REQUEST['skip']) && null !== $state['skip_redirect_url']) {
     $state['Attributes']['MFA_RESULT'] = 'UnAuthenticated';
     $id = State::saveState($state, 'authSwitcher:request');
     HTTP::redirectTrustedURL($state['skip_redirect_url'], [
@@ -46,7 +46,7 @@ if (isset($_REQUEST['skip']) && $state['skip_redirect_url'] !== null) {
     ]);
 } elseif (isset($_REQUEST['code'])) {
     if ($totp->verifyCode($state['2fa_secrets'], $_REQUEST['code'])) {
-        if ($state['skip_redirect_url'] !== null) {
+        if (null !== $state['skip_redirect_url']) {
             $state['Attributes']['MFA_RESULT'] = 'Authenticated';
             $id = State::saveState($state, 'authSwitcher:request');
             HTTP::redirectTrustedURL($state['skip_redirect_url'], [

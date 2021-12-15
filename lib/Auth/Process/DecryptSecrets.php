@@ -23,7 +23,7 @@ class DecryptSecrets extends ProcessingFilter
 
     private $user_id_attribute = 'uid';
 
-    private $signing_keystore = null;
+    private $signing_keystore;
 
     private $signing_key_id = 'rsa1';
 
@@ -34,8 +34,8 @@ class DecryptSecrets extends ProcessingFilter
     /**
      * Initialize the filter.
      *
-     * @param array $config  Configuration information about this filter.
-     * @param mixed $reserved  For future use
+     * @param array $config   configuration information about this filter
+     * @param mixed $reserved For future use
      */
     public function __construct(array $config, $reserved)
     {
@@ -54,18 +54,18 @@ class DecryptSecrets extends ProcessingFilter
     }
 
     /**
-     * Apply DecryptSecrets filter
+     * Apply DecryptSecrets filter.
      *
-     * @param array $state  The current state
+     * @param array $state The current state
      */
     public function process(&$state)
     {
         $attributes = &$state['Attributes'];
 
-        if (! empty($attributes['mfaTokens'])) {
+        if (!empty($attributes['mfaTokens'])) {
             foreach ($attributes['mfaTokens'] as $mfaToken) {
                 $token = json_decode($mfaToken, true);
-                if ($token['type'] === 'TOTP') {
+                if ('TOTP' === $token['type']) {
                     $secret = $this->decryptTokenData($token['data'], $attributes);
                     if ($secret) {
                         $attributes[$this->secret_attr][] = $secret;
@@ -77,8 +77,8 @@ class DecryptSecrets extends ProcessingFilter
 
     private function decryptTokenData($tokenData, $attributes)
     {
-        # isset($tokenData['payload']) condition for backward compatibility (unsigned tokens will be skipped)
-        if ($this->signing_enabled && ! isset($tokenData['secret'])) {
+        // isset($tokenData['payload']) condition for backward compatibility (unsigned tokens will be skipped)
+        if ($this->signing_enabled && !isset($tokenData['secret'])) {
             $userId = $attributes[$this->user_id_attribute][0];
             $sign_jwkset = JWKSet::createFromJson(file_get_contents($this->signing_keystore));
             $sign_jwk = $sign_jwkset->get($this->signing_key_id);
@@ -94,8 +94,9 @@ class DecryptSecrets extends ProcessingFilter
             $serializerManager = new JWSSerializerManager([new CompactSerializer()]);
 
             $jws = $serializerManager->unserialize($tokenData);
-            if (! $jwsVerifier->verifyWithKey($jws, $sign_jwk, 0)) {
+            if (!$jwsVerifier->verifyWithKey($jws, $sign_jwk, 0)) {
                 Logger::debug('SIGNED SECRET NOT VERIFIED');
+
                 return null;
             }
             $payload = $jws->getPayload();
@@ -103,17 +104,21 @@ class DecryptSecrets extends ProcessingFilter
                 $payload = json_decode($payload, true);
                 if ($payload['userId'] !== $userId) {
                     Logger::debug('SIGNED SECRET HAS WRONG USER ID');
+
                     return null;
                 }
                 $cipher = GetCipher::getInstance(Configuration::getOptionalConfig(self::MODULE_CONFIG_FILE));
+
                 return $cipher->decrypt($payload['secret']);
             }
         }
-        # !isset($tokenData['payload']) condition for backward compatibility (signed tokens will be skipped)
-        elseif (! $this->signing_enabled && isset($tokenData['secret'])) {
+        // !isset($tokenData['payload']) condition for backward compatibility (signed tokens will be skipped)
+        elseif (!$this->signing_enabled && isset($tokenData['secret'])) {
             $cipher = GetCipher::getInstance(Configuration::getOptionalConfig(self::MODULE_CONFIG_FILE));
+
             return $cipher->decrypt($tokenData['secret']);
         }
+
         return null;
     }
 }

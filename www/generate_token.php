@@ -8,7 +8,7 @@ use SimpleSAML\XHTML\Template;
 
 session_start();
 
-if (! isset($_SESSION['qrcode']) && ! isset($_SESSION['userId'])) {
+if (!isset($_SESSION['qrcode']) && !isset($_SESSION['userId'])) {
     $totp = new Totp();
     $userId = $totp->getUserId();
     $secret = $totp->createSecret();

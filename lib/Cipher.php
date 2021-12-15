@@ -7,21 +7,25 @@ namespace SimpleSAML\Module\totp;
 interface Cipher
 {
     /**
-     * The constructor
+     * The constructor.
      *
      * @param $moduleConfig - module's configuration
      */
     public function __construct($moduleConfig);
 
     /**
-     * Encrypt the data
+     * Encrypt the data.
+     *
+     * @param mixed $data
      *
      * @return string
      */
     public function encrypt($data);
 
     /**
-     * Decrypt the data
+     * Decrypt the data.
+     *
+     * @param mixed $data
      *
      * @return might return false if data is currupted, string otherwise
      */

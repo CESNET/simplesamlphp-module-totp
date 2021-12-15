@@ -13,27 +13,29 @@ class OpenSslCipher implements Cipher
     private const CIPHERS = [['aes-256-ecb', 'sha512']];
 
     /**
-     * Length of the second key
+     * Length of the second key.
      */
     private const SECOND_KEY_LENGTH = 64;
 
     /**
-     * The cipher index is padded to this length
+     * The cipher index is padded to this length.
      */
     private const CIPHER_INDEX_PADDING = 3;
 
     /**
-     * First key, used for encryption
+     * First key, used for encryption.
      */
     private $key32;
 
     /**
-     * Second key, used for hash
+     * Second key, used for hash.
      */
     private $key64;
 
     /**
      * @override
+     *
+     * @param mixed $moduleConfig
      */
     public function __construct($moduleConfig)
     {
@@ -43,6 +45,8 @@ class OpenSslCipher implements Cipher
 
     /**
      * @override
+     *
+     * @param mixed $data
      */
     public function encrypt($data)
     {
@@ -55,11 +59,14 @@ class OpenSslCipher implements Cipher
         $first_encrypted = openssl_encrypt($data, $cipherAlgorithm, $first_key, OPENSSL_RAW_DATA);
         $second_encrypted = hash_hmac($hashAlgorithm, $first_encrypted, $second_key, true);
         $paddedCipherIndex = self::padNumber($cipherIndex, self::CIPHER_INDEX_PADDING);
+
         return base64_encode($paddedCipherIndex . $second_encrypted . $first_encrypted);
     }
 
     /**
      * @override
+     *
+     * @param mixed $data
      */
     public function decrypt($data)
     {
@@ -85,10 +92,13 @@ class OpenSslCipher implements Cipher
 
     /**
      * Pad a number to a specified number of characters by prepending zeros.
+     *
+     * @param mixed $number
      */
     private static function padNumber($number, int $pad_length)
     {
         $number = strval($number);
+
         return str_pad($number, $pad_length, '0', STR_PAD_LEFT);
     }
 }

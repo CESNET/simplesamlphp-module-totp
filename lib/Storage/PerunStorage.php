@@ -56,7 +56,8 @@ class PerunStorage
             ->aud($storage_config->getString('OIDCClientId'))
             ->sub($userId)
             ->claim('acr', 'https://refeds.org/profile/mfa')
-            ->sign($jwk);
+            ->sign($jwk)
+        ;
         curl_setopt(
             $ch,
             CURLOPT_HTTPHEADER,
@@ -75,7 +76,7 @@ class PerunStorage
     public static function getSignatureAlgorithm($className)
     {
         $classPath = sprintf('Jose\\Component\\Signature\\Algorithm\\%s', $className);
-        if (! class_exists($classPath)) {
+        if (!class_exists($classPath)) {
             throw new \Exception('Invalid algorithm specified: ' . $classPath);
         }
 
@@ -106,11 +107,13 @@ class PerunStorage
                 ->addSignature($sign_jwk, [
                     'alg' => $signing_config->getString('signingAlg', 'RS256'),
                 ])
-                ->build();
+                ->build()
+            ;
             $serializer = new CompactSerializer();
 
             return $serializer->serialize($jws, 0);
         }
+
         return $data;
     }
 }

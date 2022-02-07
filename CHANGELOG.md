@@ -1,3 +1,10 @@
+## [3.1.5](https://github.com/CESNET/simplesamlphp-module-totp/compare/v3.1.4...v3.1.5) (2022-02-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency bacon/bacon-qr-code to v2.0.6 ([58bcb22](https://github.com/CESNET/simplesamlphp-module-totp/commit/58bcb225bf32c9a6645af77766fb424f3a7e157e))
+
 ## [3.1.4](https://github.com/CESNET/simplesamlphp-module-totp/compare/v3.1.3...v3.1.4) (2022-02-03)
 
 

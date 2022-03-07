@@ -15,6 +15,12 @@
   ],
   "composerIgnorePlatformReqs": ["ext-imagick"],
   "ignoreDeps": ["npm"],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["^web-token/jwt"],
+      "groupName": "jwt"
+    }
+  ],
   "stabilityDays": 3,
   "transitiveRemediation": true
 }

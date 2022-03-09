@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6ddd384df4bbd0b136f6255ef20eb12d",
+    "content-hash": "18a6a84d1b496f7057321ed3f602d223",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -5779,16 +5779,16 @@
     "packages-dev": [
         {
             "name": "symplify/easy-coding-standard",
-            "version": "10.0.25",
+            "version": "10.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symplify/easy-coding-standard.git",
-                "reference": "c6f6a2c36cc201091ccdd4fd4433788716512d75"
+                "reference": "94cea426d4da6d40347bfdcb15bcb9cf8ef446c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symplify/easy-coding-standard/zipball/c6f6a2c36cc201091ccdd4fd4433788716512d75",
-                "reference": "c6f6a2c36cc201091ccdd4fd4433788716512d75",
+                "url": "https://api.github.com/repos/symplify/easy-coding-standard/zipball/94cea426d4da6d40347bfdcb15bcb9cf8ef446c6",
+                "reference": "94cea426d4da6d40347bfdcb15bcb9cf8ef446c6",
                 "shasum": ""
             },
             "require": {
@@ -5818,7 +5818,7 @@
             ],
             "description": "Prefixed scoped version of ECS package",
             "support": {
-                "source": "https://github.com/symplify/easy-coding-standard/tree/10.0.25"
+                "source": "https://github.com/symplify/easy-coding-standard/tree/10.1.2"
             },
             "funding": [
                 {
@@ -5830,7 +5830,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-02-20T11:20:21+00:00"
+            "time": "2022-03-06T19:13:51+00:00"
         }
     ],
     "aliases": [],

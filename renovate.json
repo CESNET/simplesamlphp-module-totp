@@ -18,6 +18,7 @@
   "packageRules": [
     {
       "matchPackagePatterns": ["^web-token/jwt"],
+      "allowedVersions": "^2.0.0",
       "groupName": "jwt"
     }
   ],

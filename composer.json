@@ -22,9 +22,9 @@
     "ext-curl": "*",
     "ext-imagick": "*",
     "web-token/jwt-easy": "2.2.11",
-    "web-token/jwt-signature": "2.2.11",
-    "web-token/jwt-core": "2.2.11",
-    "web-token/jwt-signature-algorithm-rsa": "2.2.11"
+    "web-token/jwt-signature": "3.0.2",
+    "web-token/jwt-core": "3.0.0",
+    "web-token/jwt-signature-algorithm-rsa": "3.0.2"
   },
   "suggest": {
     "web-token/jwt-signature-algorithm-ecdsa": "Adds ECDSA based signature algorithms",

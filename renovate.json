@@ -21,6 +21,7 @@
       "groupName": "jwt"
     }
   ],
+  "recreateClosed": false,
   "stabilityDays": 3,
   "transitiveRemediation": true
 }

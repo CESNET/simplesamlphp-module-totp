@@ -1,3 +1,10 @@
+## [3.1.7](https://github.com/CESNET/simplesamlphp-module-totp/compare/v3.1.6...v3.1.7) (2022-03-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency robthree/twofactorauth to v1.8.2 ([ca1340e](https://github.com/CESNET/simplesamlphp-module-totp/commit/ca1340e62c788529cc4e8757a8d794c9cd160587))
+
 ## [3.1.6](https://github.com/CESNET/simplesamlphp-module-totp/compare/v3.1.5...v3.1.6) (2022-03-17)
 
 

@@ -16,7 +16,7 @@
   "require": {
     "php": "^7.2",
     "simplesamlphp/composer-module-installer": "1.1.8",
-    "robthree/twofactorauth": "1.8.1",
+    "robthree/twofactorauth": "1.8.2",
     "bacon/bacon-qr-code": "2.0.7",
     "ext-json": "*",
     "ext-curl": "*",

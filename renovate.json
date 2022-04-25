@@ -1,28 +1,3 @@
 {
-  "extends": [
-    "config:base",
-    ":automergeBranch",
-    ":automergeLinters",
-    ":automergePatch",
-    ":automergeTesters",
-    ":enableVulnerabilityAlertsWithLabel(security)",
-    ":maintainLockFilesWeekly",
-    ":pinOnlyDevDependencies",
-    ":prNotPending",
-    ":rebaseStalePrs",
-    ":semanticCommits",
-    "npm:unpublishSafe"
-  ],
-  "composerIgnorePlatformReqs": ["ext-imagick"],
-  "ignoreDeps": ["npm"],
-  "packageRules": [
-    {
-      "matchPackagePatterns": ["^web-token/jwt"],
-      "allowedVersions": "^2.0.0",
-      "groupName": "jwt"
-    }
-  ],
-  "recreateClosed": false,
-  "stabilityDays": 3,
-  "transitiveRemediation": true
+  "enabled": false
 }

@@ -1,5 +1,7 @@
 # TOTP
 
+This module is no longer developed. We have moved to [privacyIDEA](https://github.com/privacyidea/privacyidea). Try our fork of [simplesamlphp-module-privacyidea](https://github.com/cesnet/simplesamlphp-module-privacyidea) instead.
+
 TOTP is a [SimpleSAMLphp](https://simplesamlphp.org/) [auth processing filter](https://simplesamlphp.org/docs/stable/simplesamlphp-authproc) that enables the use of the _Time-Based One-Time Password Algorithm_ (TOTP) as a second-factor authentication mechanism on either an Identity Provider or Service Provider (or both).
 
 This module is inspired by [SimpleTOTP by Aidan Rowe](https://github.com/aidan-/SimpleTOTP) but uses the [PHP library for Two Factor Authentication by Rob Janssen](https://github.com/RobThree/TwoFactorAuth). It can use SSP default storage or database for the secrets, or integrate with [Perun IDM](https://github.com/CESNET/perun).

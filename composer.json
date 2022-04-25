@@ -26,6 +26,7 @@
     "web-token/jwt-core": "2.2.11",
     "web-token/jwt-signature-algorithm-rsa": "2.2.11"
   },
+  "abandoned": "cesnet/simplesamlphp-module-privacyidea",
   "suggest": {
     "web-token/jwt-signature-algorithm-ecdsa": "Adds ECDSA based signature algorithms",
     "web-token/jwt-signature-algorithm-eddsa": "Adds EdDSA based signature algorithms",
